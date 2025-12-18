@@ -35,14 +35,12 @@ def emotion_detection():
     )
     return result
 
-
 @app.route("/")
 def index_page():
     ''' This function initiates the rendering of the main application
         page.
     '''
     return render_template("index.html")
-
 
 # Run the application on local host, port 5000
 if __name__ == "__main__":

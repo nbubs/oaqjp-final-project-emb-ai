@@ -2,7 +2,6 @@
 Webapp to test emotion detection in user supplied text.
 Implmented using the Python flask framework.
 '''
-
 # Imports from flask framework
 from flask import Flask, render_template, request
 
@@ -23,6 +22,9 @@ def emotion_detection():
 
     # Invoke the emotion detection
     response = emotion_detector(text_to_analyze)
+
+    if response['dominant_emotion'] is None:
+        return "Invalid text! Please try again!."
 
     result = (
         "For the given statement, the system response is"
